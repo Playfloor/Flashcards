@@ -57,12 +57,12 @@ $f \circ g = {\rm id}_Y$.
 }
 
 \Card{Characteristics}{Properties of an isomorphism}{
-\begin{itemize}
+\items{
 \item Reflexive: Any set is isomorphic to itself.
 \item Commutative: if $f:A\to B$ has inverse $g:B\to A$, then $g$ has inverse $f$.
 \item Transitive: $A$ isomorphic to $B$ and $B$ isomorphic to $C$ $\Rightarrow$ $A$ is
-isomorphics to $C$.
-\end{itemize}
+isomorphic to $C$.
+}
 }
 
 \Card{Notation}{$\underline n$}{The set $\{1, 2,\dots n\}$}
@@ -84,34 +84,105 @@ isomorphics to $C$.
 
 
 \Dcard{A diagram commutes}{
-All paths from top left to bottom right are equal. E.g.,
-
-\Comdiag{
-A \ar[r, "f"] \ar[dr,"h"'] \& B\ar[d, "g"]\\
-        \& C
+    All paths from top left to bottom right are equal. E.g.,
+    \Comdiag{
+    A \ar[r, "f"] \ar[dr,"h"'] \& B\ar[d, "g"]\\
+            \& C
+    }
+    commutes iff $g\circ f = h$.
 }
 
-commutes iff $g\circ f = h$.
+\Dcard{Product of two sets}{
+    The set of ordered pairs. For sets $X$ and $Y$,
+    $${(x,y)|x\in X, y\in Y}.$$
 }
+
+\Dcard{Projection function $\pi_i$}{
+    Given a product $X\times Y$ with elements $(x, y)$, $\pi_1: X\times Y \to X$ produces
+    $x$. Similarly for $\pi_2$.
+
+    \Comdiag{
+        \& X \times Y \ar[dl,"\pi_1"'] \ar[dr,"\pi_2"]\\
+        X \&  \& Y 
+    }
+}
+
+\Dcard{Universal property of projections}{
+    For any set A and any $f:A\to X$ and $g:A\to Y$, $\exists$ a unique $f\times g$ so this commutes:
+    \Comdiag{
+        \& X\times Y \ar[dl,"\pi_1"'] \ar[dr,"\pi_2"] \\
+    X \& \& Y \\
+    \& A \ar[ul, "\forall f"] \ar[ur, "\forall g"'] \ar[uu, dashrightarrow, "f\times g"]
+    }
+
+}
+
+\Card{Notation}{$X\sqcup Y$}{
+    The union of the elements of $X$ and $Y$, via indicator functions $i_1: X\to X\sqcup Y$ and $i_2$:
+
+    \Comdiag{
+        X \ar[dr,"i_1"'] \& \& Y \ar[dl,"i_2"] \\
+        \& X\sqcup Y
+    }
+    Elements of $X\sqcup Y$ have a source indicator, so if $z\in X$ and $z\in Y$,
+    $i_1z, i_2z \in X\sqcup Y$.
+}
+
+\Dcard{Universal property of coproducts}{
+    For any $f:X\to A$, $g:Y\to A$, $\exists$ a unique $f\sqcup g:X\sqcup Y\to A$:
+    \Comdiag{
+        \& A \\
+        X \ar[dr,"i_1"'] \ar[ur,"\forall f"] \& \& Y \ar[dl,"i_2"] \ar[ul,"\forall g"']\\
+        \& X\sqcup Y \ar[uu, dashrightarrow, "f\sqcup g"]
+    }
+}
+
+\Dcard{Fiber product}{
+    Given \Comdiag{
+        \& Y \ar[d,"g"]\\
+        X \ar[r, "f"] \& Z
+    }
+    $X \times_Z Y \equiv \{(x,w,y)| f(x)=w=g(y)\}$.
+}
+
+\Dcard{Pullback}{
+    Any set $W$ isomorphic to the fiber product $X\times_Z Y$, giving the commutative diagram
+    \Comdiag{
+        W \ar[r, "\pi_2"] \ar[d, "\pi_1"'] \& Y \ar[d,"g"]\\
+        X \ar[r, "f"] \& Z
+    }
+}
+
+\Dcard{Universal property for pullbacks}{
+    Given $t:X\to Z$ and $u:Y\to Z$,
+    $\exists$ a unique function $f\times_Z g: A\to X\times_z Y$ such that
+    \Comdiag{
+        X\times_Z Y \arrow[drr, bend left, "\pi_1"] \arrow[ddr, bend right, "\pi_2"] \& \& \\
+        \& A\arrow[ul, dotted, "f\times_Z g" description] \arrow[r, "\forall f"] \arrow[d, "\forall g"]
+        \& Y \arrow[d, "u"] \\
+        \& X \arrow[r, "t"] \& Z
+    }
+}
+
+
 
 
 \Dcard{Epimorphism}{
     $F$ is {\em epic} or an {\em epi} iff $g_1 f = g_2 f \Rightarrow g_1 = g_2$.
 
-\Comdiag{
-X \arrow[r,"f"] \&Y \arrow[r, shift left,"g_1"] \arrow[r,"g_2"'] \& Z
-}
+    \Comdiag{
+    X \arrow[r,"f"] \&Y \arrow[r, shift left,"g_1"] \arrow[r,"g_2"'] \& Z
+    }
 
-
-Analagous to an injective function.
+    Analogous to an injective function.
 }
 
 \Card{Definition}{Monorphism}{
     $F$ is {\em monic} or {\em mono} iff $f g_1 = f g_2 \Rightarrow g_1 = g_2$.
 
-\Comdiag{
-Z \arrow[r, shift left,"g_1"] \arrow[r,"g_2"'] \&Y \arrow[r,"f"] \& X
-}
+    \Comdiag{
+    Z \arrow[r, shift left,"g_1"] \arrow[r,"g_2"'] \&Y \arrow[r,"f"] \& X
+    }
 
 }
 
@@ -122,12 +193,12 @@ Z \arrow[r, shift left,"g_1"] \arrow[r,"g_2"'] \&Y \arrow[r,"f"] \& X
 \Card{Definition}{Group}{
 A set with a binary operation that is
 
-\begin{itemize}
+\items{
 \item    closed
 \item    associative,
 \item    has an identity, and
 \item    has an inverse
-\end{itemize}
+}
 }
 
 \Dcard{Closed mapping}{For any element $x\in S$, $f(x)\in S$.}
@@ -141,11 +212,6 @@ associative iff $f(s_1, f(s_2, s_3)) = f(f(s_1, s_2), s_3)$.
 \Dcard{Semigroup}{A set with a closed, associative mapping.
 
 A magma whose operation is also associative.}
-
-\Dcard{Monoid}{A set with an operation that is closed and associative,
-and an identity element where $f(x)=x$.
-
-A semigroup with an identity.}
 
 \Dcard{Hom set of $A$, $B$}{The set of mappings between $A$ and $B$}
 
