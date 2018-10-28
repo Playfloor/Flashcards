@@ -40,6 +40,8 @@
 \cardfrontfoot{Representation Theory}
 
 \begin{document}
+\input{tex.macros}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{flashcard}[Copying]
@@ -176,6 +178,12 @@ itself a group under the operation inherited from $G$.
   \vspace*{\stretch{1}}
 \end{flashcard}
 
+\Card{Example}{Give an example of a coset}{
+$G=$ integers ({\bf Z} and $+$\\
+$H= (m{\bf Z})$, (\{\dots, -3m, -2m, -m, 0, m, 2m, dots\})\\
+Cosets are $(m{\bf Z}), (m{\bf Z})+1, (m{\bf Z})+2, \dots$
+}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{flashcard}[Theorem 1.6]{Lagrange's theorem}
@@ -185,16 +193,24 @@ itself a group under the operation inherited from $G$.
   \vspace*{\stretch{1}}
 \end{flashcard}
 
+\Card{Notation}{For group $G$ and subgroup $H$, $G / H$ and $G \backslash H$}{
+$G/H\equiv$ set of left cosets, $\{gH: g\in G\}$\\
+$G\backslash H\equiv$ set of right cosets, $\{Hg: g\in G\}$
+}
+
+\Card{Notation}{$\abs{G : H}$}{
+Suppose $H$ is a subgroup of $G$.  The number of distinct right
+cosets of $H$ in $G$ is written as $\abs{G : H}$.
+}
+
 \begin{flashcard}[Definition]{index}
   \vspace*{\stretch{1}}
 
-  Suppose $H$ is a subgroup of $G$. The number of distinct right
-  cosets of $H$ in $G$ is written as $\abs{G : H}$. If $G$ is finite,
-  then
+Suppose $H$ is a subgroup of $G$.  If $G$ is finite, then
   \[
     \abs{G : H} =\abs{G}/\abs{H}
   \]
-  by Lagrange's theorem.
+by Lagrange's theorem.
 
   \vspace*{\stretch{1}}
 \end{flashcard}
@@ -206,7 +222,7 @@ itself a group under the operation inherited from $G$.
   \[
     g^{-1}Ng = \set{g^{-1}ng}{n \in N}.
   \]
-  We indicate that $N$ is a normal subgroup of $G$ by writing:
+We indicate that $N$ is a normal subgroup of $G$ by writing:
   \[
     N \normal G.
   \]

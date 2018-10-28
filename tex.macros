@@ -13,3 +13,11 @@
 \long\def\Dcard#1#2{
 \Card{Definition}{#1}{#2}
 }
+
+\def\items#1{
+    \begin{itemize}
+    \setlength{\itemsep}{1pt} \setlength{\parskip}{0pt} \setlength{\parsep}{0pt}
+    #1
+    \end{itemize}
+}
+

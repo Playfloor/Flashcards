@@ -8,6 +8,7 @@
 \usepackage{amssymb,amsmath}
 
 \begin{document}
+\input{tex.macros}
 
 \begin{flashcard}[Copyright \& License]{Copyright \copyright \, 2006 Jason Underdown \\
 Some rights reserved.}
@@ -309,6 +310,29 @@ If $G$ is a finite group of order $n$ then $a^n = e$ for all $a \in G$.
 \vspace*{\stretch{1}}
 \end{flashcard}
 
+\Dcard{Abelian group}{
+    AKA a commutative group:
+    a group whose operation is also commutative: $a\cdot b = b\cdot a$.
+}
+
+\Dcard{Monoid}{
+    A set with an operation that is closed and associative,
+    and an identity element where $f(x)=x$.
+
+    I.e., a semigroup with an identity.
+}
+
+\Dcard{Ring}{
+    A set $R$ with two binary operations, annotated $+$ and $\cdot$, where
+    \items{
+        \item $\{R, +\}$ is an abelian (commutative) group
+        \item $\{R, \cdot\}$ is a monoid
+        \item The distributive property holds:
+            $$a \cdot (b + c) = (a \cdot b) + (a \cdot c)\\
+            (b + c) \cdot a = (b \cdot a) + (c \cdot a) $$
+    }
+}
+
 \begin{flashcard}[Definition]{homomorphism}
 \vspace*{\stretch{1}}
 If $G$ and $G'$ are two groups, then the mapping
@@ -327,8 +351,8 @@ f(ab) = f(a)f(b) \qquad \forall \; a,b \in G
 \begin{small}
 Suppose the mapping $f: G\rightarrow G'$ is a homomorphism, then:
 \begin{itemize}
-\item If $f$ is 1--1 it is called a \textit{monomorphism}.
-\item If $f$ is 1--1 and onto, then it is called an \mbox{\textit{isomorphism}}.
+\item If $f$ is 1--1 (injective) it is called a \textit{monomorphism}.
+\item If $f$ is 1--1 and onto (injective and surjective), then it is called an \mbox{\textit{isomorphism}}.
 \item If $f$ is an isomorphism that maps $G$ onto itself then it is called
 an \textit{automorphism}.
 \item If an isomorphism exists between two groups then they are said to be
@@ -347,10 +371,10 @@ then the composition of $h$ with $f$, $h\circ f$ is also a homomorphism.
 
 \begin{flashcard}[Definition]{kernel}
 \vspace*{\stretch{1}}
-If $f$ is a homomorphism from $G$ to $G'$ then the \textit{kernel}
-of $f$ is denoted by $\textrm{Ker}f$ and defined to be
+If $f$ is a homomorphism from $G$ to $G'$ (which has identity $e'$) then the \textit{kernel}
+of $f$ is
 \begin{equation*}
-\textrm{Ker}f = \lbrace a \in G \mid f(a)=e' \rbrace
+\textrm{Ker}f \equiv \lbrace a \in G \mid f(a)=e' \rbrace
 \end{equation*}
 \vspace*{\stretch{1}}
 \end{flashcard}
