@@ -1,7 +1,7 @@
 %Potentially shared across files. Also, putting it in the .tex files would 
 %throw off go.py's card count.
 
-\long\def\Card#1#2#3{
+\newcommand{\Card}[3][Definition]{
 \begin{flashcard}[#1]{#2}
 \vspace*{\stretch{1}}
 #3
@@ -11,7 +11,7 @@
 
 % Most are definitions, so let's give those their own macro
 \long\def\Dcard#1#2{
-\Card{Definition}{#1}{#2}
+\Card[Definition]{#1}{#2}
 }
 
 \def\items#1{

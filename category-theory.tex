@@ -20,12 +20,12 @@
 \end{center}
 }
 
-\Card{Intro}{Author, copyleft}{Ben Klemens, CC BY/SA/NC}
+\Card[Intro]{Author, copyleft}{Ben Klemens, CC BY/SA/NC}
 
-\Dcard{Domain of $f$}{ For $f:X\to Y$, $X$.}
-\Dcard{Codomain of $f$}{ For $f:X\to Y$, $Y$.}
+\Card{Domain of $f$}{ For $f:X\to Y$, $X$.}
+\Card{Codomain of $f$}{ For $f:X\to Y$, $Y$.}
 
-\Dcard{Composition of $f$ and $g$}{
+\Card{Composition of $f$ and $g$}{
 As a diagram,
 \Comdiag{
 X \arrow[r,"f"] \&Y \arrow[r, "g"] \& Z
@@ -34,18 +34,18 @@ X \arrow[r,"f"] \&Y \arrow[r, "g"] \& Z
 Written $g \circ f: X\to Z$.
 }
 
-\Dcard{$Hom_{\bf \rm set}(X,Y)$}{The set of functions $X\to Y$}
+\Card{$Hom_{\bf \rm set}(X,Y)$}{The set of functions $X\to Y$}
 
-\Dcard{Equality of $f$ and $g$}{
+\Card{Equality of $f$ and $g$}{
 $f:X\to Y$ and $g:X\to Y$
 are equal iff $f(x)=g(x), \forall x \in X$
 }
 
-\Dcard{Identity function on $X$}{
+\Card{Identity function on $X$}{
 ${\rm id}_X:X\to X$ such that ${\rm id}_X(x) = x, \forall x\in X$.
 }
 
-\Dcard{Isomorpism}{
+\Card{Isomorpism}{
 A one-to-one correspondence.
 
 \Comdiag{
@@ -56,7 +56,7 @@ $g \circ f = {\rm id}_X$ and
 $f \circ g = {\rm id}_Y$.
 }
 
-\Card{Characteristics}{Properties of an isomorphism}{
+\Card[Characteristics]{Properties of an isomorphism}{
 \items{
 \item Reflexive: Any set is isomorphic to itself.
 \item Commutative: if $f:A\to B$ has inverse $g:B\to A$, then $g$ has inverse $f$.
@@ -65,25 +65,25 @@ isomorphic to $C$.
 }
 }
 
-\Card{Notation}{$\underline n$}{The set $\{1, 2,\dots n\}$}
+\Card[Notation]{$\underline n$}{The set $\{1, 2,\dots n\}$}
 
-\Dcard{Cardinality of finite set $X$}{$|X| = n$ iff
+\Card{Cardinality of finite set $X$}{$|X| = n$ iff
 
 \Comdiag{
     X \arrow[r,"\cong"] \&\underline n
 }
 }
 
-\Card{Lemma}{Cardinality of $A$ and $B$  given \begin{tikzcd}[ampersand replacement=\&]
+\Card[Lemma]{Cardinality of $A$ and $B$  given \begin{tikzcd}[ampersand replacement=\&]
     A \arrow[r,"\cong"] \&B
 \end{tikzcd}
 }{|A| = |B|}
 
-\Dcard{Injective}{
+\Card{Injective}{
     For $F:A\to B$, $f(x) = f(y)$ only if $x=y$: points map to different values.}
 
 
-\Dcard{A diagram commutes}{
+\Card{A diagram commutes}{
     All paths from top left to bottom right are equal. E.g.,
     \Comdiag{
     A \ar[r, "f"] \ar[dr,"h"'] \& B\ar[d, "g"]\\
@@ -92,12 +92,12 @@ isomorphic to $C$.
     commutes iff $g\circ f = h$.
 }
 
-\Dcard{Product of two sets}{
+\Card{Product of two sets}{
     The set of ordered pairs. For sets $X$ and $Y$,
     $${(x,y)|x\in X, y\in Y}.$$
 }
 
-\Dcard{Projection function $\pi_i$}{
+\Card{Projection function $\pi_i$}{
     Given a product $X\times Y$ with elements $(x, y)$, $\pi_1: X\times Y \to X$ produces
     $x$. Similarly for $\pi_2$.
 
@@ -107,7 +107,7 @@ isomorphic to $C$.
     }
 }
 
-\Dcard{Universal property of projections}{
+\Card{Universal property of projections}{
     For any set A and any $f:A\to X$ and $g:A\to Y$, $\exists$ a unique $f\times g$ so this commutes:
     \Comdiag{
         \& X\times Y \ar[dl,"\pi_1"'] \ar[dr,"\pi_2"] \\
@@ -117,7 +117,7 @@ isomorphic to $C$.
 
 }
 
-\Card{Notation}{$X\sqcup Y$}{
+\Card[Notation]{$X\sqcup Y$}{
     The union of the elements of $X$ and $Y$, via indicator functions $i_1: X\to X\sqcup Y$ and $i_2$:
 
     \Comdiag{
@@ -128,7 +128,7 @@ isomorphic to $C$.
     $i_1z, i_2z \in X\sqcup Y$.
 }
 
-\Dcard{Universal property of coproducts}{
+\Card{Universal property of coproducts}{
     For any $f:X\to A$, $g:Y\to A$, $\exists$ a unique $f\sqcup g:X\sqcup Y\to A$:
     \Comdiag{
         \& A \\
@@ -137,7 +137,7 @@ isomorphic to $C$.
     }
 }
 
-\Dcard{Fiber product}{
+\Card{Fiber product}{
     Given \Comdiag{
         \& Y \ar[d,"g"]\\
         X \ar[r, "f"] \& Z
@@ -145,7 +145,7 @@ isomorphic to $C$.
     $X \times_Z Y \equiv \{(x,w,y)| f(x)=w=g(y)\}$.
 }
 
-\Dcard{Pullback}{
+\Card{Pullback}{
     Any set $W$ isomorphic to the fiber product $X\times_Z Y$, giving the commutative diagram
     \Comdiag{
         W \ar[r, "\pi_2"] \ar[d, "\pi_1"'] \& Y \ar[d,"g"]\\
@@ -153,7 +153,7 @@ isomorphic to $C$.
     }
 }
 
-\Dcard{Universal property for pullbacks}{
+\Card{Universal property for pullbacks}{
     Given $t:X\to Z$ and $u:Y\to Z$,
     $\exists$ a unique function $f\times_Z g: A\to X\times_z Y$ such that
     \Comdiag{
@@ -177,7 +177,7 @@ isomorphic to $C$.
     Analogous to an injective function.
 }
 
-\Card{Definition}{Monorphism}{
+\Card{Monorphism}{
     $F$ is {\em monic} or {\em mono} iff $f g_1 = f g_2 \Rightarrow g_1 = g_2$.
 
     \Comdiag{
@@ -186,11 +186,11 @@ isomorphic to $C$.
 
 }
 
-\Card{Definition}{Isomorphism}{
+\Card{Isomorphism}{
     A mapping that is epic and monic.
 }
 
-\Card{Definition}{Group}{
+\Card{Group}{
 A set with a binary operation that is
 
 \items{
@@ -201,18 +201,18 @@ A set with a binary operation that is
 }
 }
 
-\Dcard{Closed mapping}{For any element $x\in S$, $f(x)\in S$.}
+\Card{Closed mapping}{For any element $x\in S$, $f(x)\in S$.}
 
-\Dcard{Associative mapping}{A mapping $f:S\times S$ is
-associative iff $f(s_1, f(s_2, s_3)) = f(f(s_1, s_2), s_3)$.
+\Card{Associative mapping}{
+    A mapping $f:S\times S$ is associative iff $f(s_1, f(s_2, s_3)) = f(f(s_1, s_2), s_3)$.
 }
 
-\Dcard{Magma}{A set with a closed mapping.}
+\Card{Magma}{A set with a closed mapping.}
 
-\Dcard{Semigroup}{A set with a closed, associative mapping.
+\Card{Semigroup}{A set with a closed, associative mapping.
 
 A magma whose operation is also associative.}
 
-\Dcard{Hom set of $A$, $B$}{The set of mappings between $A$ and $B$}
+\Card{Hom set of $A$, $B$}{The set of mappings between $A$ and $B$}
 
 \end{document}
