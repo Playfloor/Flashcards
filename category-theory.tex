@@ -45,7 +45,7 @@ are equal iff $f(x)=g(x), \forall x \in X$
 ${\rm id}_X:X\to X$ such that ${\rm id}_X(x) = x, \forall x\in X$.
 }
 
-\Card{Isomorpism}{
+\Card{Isomorphism}{
 A one-to-one correspondence.
 
 \Comdiag{
@@ -164,10 +164,114 @@ isomorphic to $C$.
     }
 }
 
+\Card{Coequalizer}{
+    Given the equivalence relation $\{(f(x), g(x))|x\in X\}\subseteq Y\times Y$,
+$Coeq(f,g)\equiv Y \backslash f(x)\sim g(x)$
+    \Comdiag{
+    Z \arrow[r, shift left,"f"] \arrow[r,"g"'] \&Y \arrow[r] \& Coeq(f,g)
+    }
+}
 
+\Card{Initial set}{
+    A set $S$ such that for every set $A$ there exists a unique mapping $S\to A$.
+}
 
+\Card{Retract section, retract projection}{
+    Given $f:X\to Y$, $g:Y\to X$ and $g\circ f =id_X$,
+    \items{
+        \item $f$ is a retract section
+        \item $g$ is a retract projection
+    }
+}
 
-\Dcard{Epimorphism}{
+\Card[Notation]{$Y^X$}{$Y^X\equiv {\rm Hom_{Set}(X, Y)}$.}
+
+\Card[Proposition]{Currying}{
+    For any sets $A, X, Y$, $\exists$ a bijection
+$$C: {\rm Hom_{Set}(X\times A, Y)} \to {\rm Hom_{Set}(X, {\rm Hom_{Set}(A, Y)})}$$
+i.e.,
+$$C: Y^{X\times A} \to Y^{A^X}$$
+}
+
+\Card{Span}{
+    \Comdiag{
+         \& R \ar[dl, "f"'] \ar[dr, "g"]\\
+        X\&   \& Y
+    }
+
+}
+
+\Card{Composite Span}{
+    Two spans joined by their fiber product.
+
+    \Comdiag{
+        \& \& R\times_Y R' \ar[dl] \ar[dr]\\
+         \& R \ar[dl, "f"'] \ar[dr, "g"]\& \& R' \ar[dl, "f'"'] \ar[dr, "g'"]\\
+        X\&   \& Y \& \& Z
+    }
+
+}
+
+\Card{Equalizer}{
+$Eq(f, g)\equiv {x\in X|f(x)=f(y)}$.
+
+    \Comdiag{Eq(f, g) \ar[r] \& X \ar[r, shift left, "f"] \ar[r, "g"'] \& Y
+    }
+}
+
+\Card{Terminal set}{
+    A set $S$ such that for every set $X$, there exists a unique mapping $f:X\to S$.
+}
+
+\Card{Limit}{
+    The unique mapping to sets (e.g., $X$ and $Y$) that allows a given cone diagram to
+    commute (see the universal property cards), with a unique mapping to corresponding
+    mappings after transformations of $X$ and $Y$ ($f(x)$, $g(y)$). 
+}
+
+\Card[Notation]{$x\sim_R y$ or $x\sim y$}{
+    The equivalence relation, $R\subseteq X\times X$, where
+    \items{
+        \item $(x,x)\in R$ (reflexive)
+        \item $(x,y)\in R \Leftrightarrow (y, x)\in R$ (symmetry)
+        \item $(x,y)\in R + (y, z)\in R \rightarrow (y, z)\in R$ (transitivity)
+    }
+    $x\sim_R y \equiv (x,y) \in R.$
+}
+
+\Card{Equivalence class}{
+    Given an equivalence relation $\sim$ on the set $X$, a set $A$ where
+    \items{
+        \item $A\neq \emptyset$
+        \item $x\in A$ and $y\in A  \rightarrow x\sim y$
+        \item $x\in A$ and $x\sim y  \rightarrow y\in A$
+    }
+}
+
+\Card{Quotient $X\backslash \sim$}{The set of equivalence classes of $\sim$ in $X$.}
+
+\Card{Fiber sum}{
+    A {\em pushout}: given $f:Z\to X$ and  $g:Z\to Y$, the fiber sum $X\sqcup_Z Y\equiv (X\sqcup Z \sqcup
+Y)\backslash ~$ where $z\sim f(z)$ and $z\sim g(z)$. So,
+
+    \Comdiag{
+        Z \ar[d, "f"'] \ar[r, "g"] \& Y \ar[d, "i_2"] \\
+        X \ar[r, "i_1"] \& X\sqcup_Z Y
+    }
+}
+
+\Card{Universal property for pushouts}{
+    \small{Given $t:Z\to X$ and $u:Z\to Y$,
+    $\exists$ a unique function $f\sqcup_Z g:  X\sqcup_z Y \to A$ such that
+    \Comdiag{
+        Z \ar[d, "t"'] \ar[r, "u"] \& Y \ar[d, "g"] \ar[ddr, bend left, "i_2"] \\
+        X \ar[r, "f"] \ar[drr, bend right, "i_1"] \& A \\
+    \& \& X\sqcup_Z Y \arrow[ul, dotted, "f\sqcup_Z g" description]
+    }
+    So, $f = (f\sqcup_Z g)\circ i_1$ and $g = (f\sqcup_Z g)\circ i_2$.}
+}
+
+\Card{Epimorphism}{
     $F$ is {\em epic} or an {\em epi} iff $g_1 f = g_2 f \Rightarrow g_1 = g_2$.
 
     \Comdiag{
@@ -183,7 +287,6 @@ isomorphic to $C$.
     \Comdiag{
     Z \arrow[r, shift left,"g_1"] \arrow[r,"g_2"'] \&Y \arrow[r,"f"] \& X
     }
-
 }
 
 \Card{Isomorphism}{
