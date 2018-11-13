@@ -310,19 +310,19 @@ If $G$ is a finite group of order $n$ then $a^n = e$ for all $a \in G$.
 \vspace*{\stretch{1}}
 \end{flashcard}
 
-\Dcard{Abelian group}{
+\Card{Abelian group}{
     AKA a commutative group:
     a group whose operation is also commutative: $a\cdot b = b\cdot a$.
 }
 
-\Dcard{Monoid}{
+\Card{Monoid}{
     A set with an operation that is closed and associative,
     and an identity element where $f(x)=x$.
 
     I.e., a semigroup with an identity.
 }
 
-\Dcard{Ring}{
+\Card{Ring}{
     A set $R$ with two binary operations, annotated $+$ and $\cdot$, where
     \items{
         \item $\{R, +\}$ is an abelian (commutative) group
@@ -655,5 +655,16 @@ then the number of subgroups of order $p^{n}$ in $G$ is
 of the form $1 + kp$ and divides $|G|$.
 \vspace*{\stretch{1}}
 \end{flashcard}
+
+\Card{Poset}{
+    Partially ordered set: a set $S$ and relation $\leq$ where
+    \items{
+        \item $a \leq a$ (reflexive)
+        \item $a \leq b$ and $b \leq a \Rightarrow a=b$ (antisymmetry)
+        \item $a \leq b$ and $b \leq c \Rightarrow a\leq c$ (transitivity)
+    } for all $a, b, c \in S$.
+
+    A preorder with the addition of the antisymmetry condition.
+}
 
 \end{document}

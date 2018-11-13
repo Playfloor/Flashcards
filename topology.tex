@@ -17,6 +17,7 @@
 \newcommand{\setst}{\; | \;}
 
 \begin{document}
+\input{tex.macros}
 
 \begin{flashcard}[Copyright \& License]{Copyright \copyright \,
 2007 Jason Underdown \\ Some rights reserved.}
@@ -333,20 +334,14 @@ A function $f:(X_1,d_1) \rightarrow (X_2,d_2)$ is called a
 \vspace*{\stretch{1}}
 \end{flashcard}
 
-\begin{flashcard}[Definition]{equivalent metrics}
-\vspace*{\stretch{1}}
-Two metrics $d_1$, $d_2$ are called \mbox{\textbf{equivalent}} iff
-they have the same open sets.
-\vspace*{\stretch{1}}
-\end{flashcard}
+\Card{equivalent metrics}{
+    Two metrics $d_1$, $d_2$ are called \mbox{\textbf{equivalent}} iff
+    they have the same open sets.
+}
 
-\begin{flashcard}[Remark]{two metrics are equivalent iff \\
-the identity map is a homeomorphism}
-\vspace*{\stretch{1}}
-Two metrics, $d_1$, $d_2$ are equivalent iff $id: (X,d_1) \rightarrow (X,d_2)$
-is a homeomorphism.
-\vspace*{\stretch{1}}
-\end{flashcard}
+\Card[Lemma]{Two metrics $d_1$, $d_2$ are equivalent iff\dots}{
+    \dots the identity map $id: (X,d_1) \rightarrow (X,d_2)$ is a homeomorphism.
+}
 
 \begin{flashcard}[Theorem]{composition of continuous functions \\
 preserves continuity}
@@ -378,11 +373,9 @@ a \mbox{\textbf{topology}} on $X$ iff
 \vspace*{\stretch{1}}
 \end{flashcard}
 
-\begin{flashcard}[Definition]{topological space}
-\vspace*{\stretch{1}}
-A \mbox{\textbf{topological space}} $(X,\tau)$ is a set $X$ and a 
-topology $\tau$ on $X$.
-\vspace*{\stretch{1}}
-\end{flashcard}
+\Card{topological space}{
+    A \mbox{\textbf{topological space}} $(X,\tau)$ is a set $X$ and a
+    topology $\tau$ on $X$.
+}
 
 \end{document}

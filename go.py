@@ -15,7 +15,7 @@ for i in Ftex:
     go("sed 's/avery5371/onecard/' <" + i + " > tmp."+i)
     go("pdflatex tmp."+i)
 
-Count=go("egrep '(\\\\Dcard|\\\\Card|begin.flashcard)' " + " ".join(Ftex)  + " | wc -l")
+Count=go("egrep '(\\\\Card|begin.flashcard)' " + " ".join(Ftex)  + " | wc -l")
 Count=int(Count)-len(Files) #strip the first copyright/attribution card
 print("--------------------\n\t"+str(Count)+" cards.\n--------------------")
 

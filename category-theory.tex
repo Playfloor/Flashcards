@@ -1,4 +1,4 @@
-\documentclass[onecard,frame]{flashcards}
+\documentclass[avery5371,frame]{flashcards}
 
 \cardfrontstyle[\large\slshape]{headings}
 \cardbackstyle{empty}
@@ -20,6 +20,8 @@
 \end{center}
 }
 
+\def\Hom#1{\ensuremath {\rm Hom}_{\rm \bf #1}}
+
 \Card[Intro]{Author, copyleft}{Ben Klemens, CC BY/SA/NC}
 
 \Card{Domain of $f$}{ For $f:X\to Y$, $X$.}
@@ -34,15 +36,14 @@ X \arrow[r,"f"] \&Y \arrow[r, "g"] \& Z
 Written $g \circ f: X\to Z$.
 }
 
-\Card{$Hom_{\bf \rm set}(X,Y)$}{The set of functions $X\to Y$}
+\Card{$\Hom{set}(X,Y)$}{The set of functions $X\to Y$}
 
 \Card{Equality of $f$ and $g$}{
-$f:X\to Y$ and $g:X\to Y$
-are equal iff $f(x)=g(x), \forall x \in X$
+    $f:X\to Y$ and $g:X\to Y$ are equal iff $f(x)=g(x), \forall x \in X$
 }
 
 \Card{Identity function on $X$}{
-${\rm id}_X:X\to X$ such that ${\rm id}_X(x) = x, \forall x\in X$.
+    ${\rm id}_X:X\to X$ such that ${\rm id}_X(x) = x, \forall x\in X$.
 }
 
 \Card{Isomorphism}{
@@ -184,11 +185,11 @@ $Coeq(f,g)\equiv Y \backslash f(x)\sim g(x)$
     }
 }
 
-\Card[Notation]{$Y^X$}{$Y^X\equiv {\rm Hom_{Set}(X, Y)}$.}
+\Card[Notation]{$Y^X$}{$Y^X\equiv \Hom{Set}(X, Y)$.}
 
 \Card[Proposition]{Currying}{
     For any sets $A, X, Y$, $\exists$ a bijection
-$$C: {\rm Hom_{Set}(X\times A, Y)} \to {\rm Hom_{Set}(X, {\rm Hom_{Set}(A, Y)})}$$
+$$C: \Hom{Set}(X\times A, Y) \to \Hom{Set}(X, \Hom{Set}(A, Y))$$
 i.e.,
 $$C: Y^{X\times A} \to Y^{A^X}$$
 }
@@ -271,6 +272,16 @@ Y)\backslash ~$ where $z\sim f(z)$ and $z\sim g(z)$. So,
     So, $f = (f\sqcup_Z g)\circ i_1$ and $g = (f\sqcup_Z g)\circ i_2$.}
 }
 
+\Card{Power set}{For a given set $S$, the set of subsets of $S$. Here notated ${\mathbb P}(S)$}
+
+
+\Card[Proposition]{For an arbitrary set $S$, how do $\Omega$ and ${\mathbb P}(S)$ relate?}{
+$\exists$ an isomporphism $f:$\Comdiag{ \Hom{Set}(S,\Omega) \arrow[r,"\cong"] \& {\mathbb P}(S) }
+}
+
+\Card{Characteristic function}{For a set $S'\subseteq S$, the mapping $S\to \Omega$
+marking an element true iff it is in $S'$.}
+
 \Card{Epimorphism}{
     $F$ is {\em epic} or an {\em epi} iff $g_1 f = g_2 f \Rightarrow g_1 = g_2$.
 
@@ -278,7 +289,7 @@ Y)\backslash ~$ where $z\sim f(z)$ and $z\sim g(z)$. So,
     X \arrow[r,"f"] \&Y \arrow[r, shift left,"g_1"] \arrow[r,"g_2"'] \& Z
     }
 
-    Analogous to an injective function.
+    $f$ is injective iff it is epic.
 }
 
 \Card{Monorphism}{
@@ -287,10 +298,163 @@ Y)\backslash ~$ where $z\sim f(z)$ and $z\sim g(z)$. So,
     \Comdiag{
     Z \arrow[r, shift left,"g_1"] \arrow[r,"g_2"'] \&Y \arrow[r,"f"] \& X
     }
+
+    $f$ is surjective iff it is monic.
 }
 
 \Card{Isomorphism}{
     A mapping that is epic and monic.
+}
+
+\Card[Theorem]{ If $f$ is monomorphic, what can we say about $f'$?
+    \Comdiag{
+       X\times_Z Y \ar[r, "f'"] \ar[d, "g"'] \& Y \ar[d,"g'"]\\
+        X \ar[r, "f"] \& Z
+    }
+} {
+    $f'$ is also monomorphic. Prove via the defn of mononomrpism via $B$ and $X$ (so $c=d$), then the 
+    universal property of pullbacks to show $a=b$.
+    \Comdiag{
+        B \ar[r, shift left, "a"] \ar[r, "b"'] \ar[dr, shift left, "c"] \ar[dr, "d"'] \&
+        X\times_Z Y \ar[r, "f'"] \ar[d, "g"'] \& Y \ar[d,"g'"]\\
+        \&X \ar[r, "f"] \& Z
+    }
+}
+
+\Card[Theorem]{
+    If $f$ is epic, what can we say about $f'$?
+    \Comdiag{
+        Z \ar[d, "g"'] \ar[r, "f"] \& Y \ar[d, "g'"] \\
+        X \ar[r, "f'"] \& X\sqcup_Z Y
+    }
+} {$f'$ is also epic. Prove via the defn of epimorpism via $B$ and $Y$ (so $a=b$), then the 
+    universal property of pullbacks to show $c=d$.
+    \Comdiag{
+        Z \ar[r, "f'"] \ar[d, "g"'] \& Y \ar[d,"g'"]\&
+            B \ar[l, shift left, "b"] \ar[l, "a"'] \ar[dl, shift left, "d"] \ar[dl, "c"'] \\
+        X \ar[r, "f'"] \& X\sqcup_Z Y
+    }
+}
+
+\Card[Corollary]{
+    What is $A$ in
+    \Comdiag{A \ar[r, "f'"] \ar[d, "i"] \& \{1\} \ar[d, "True"]\\
+        X \ar[r, "f"'] \& \Omega
+    }
+}{
+    $X\times_{\Omega}\{1\}$
+}
+
+\Card{Multiset}{
+    A sequence $X\equiv (E,B,\pi)$ where $E$ and $B$ are sets and $\pi : E \to B$ is a surjective function. 
+}
+
+\Card[Question]{
+    Given two multisets $(E,B, \pi)$ and $(E',B', \pi')$, what would a mapping
+    between them look like?
+}{
+    A pair of functions $f_1:E\to E'$ and $f_2:B\to B'$ such that
+    \Comdiag{E \ar[r, "f_1"] \ar[d, "\pi"'] \& E'  \ar[d, "\pi'"]\\
+        B \ar[r, "f_2"'] \& B'
+    }
+}
+
+
+\Card{Pseudomultiset}{
+    A multiset where $\pi$ is not surjective.
+    A sequence $X\equiv (E,B,\pi)$ where $E$ and $B$ are sets and $\pi : E \to B$. 
+}
+
+
+\Card{Relative set over B}{A pair $(E, \pi)$ with $\pi:E \to R$.}
+
+\Card[Question]{
+    Given two relative sets over the same $B$,$(E, \pi)$ and $(E', \pi')$, what would a mapping
+    between them look like?
+}{
+    \Comdiag{E \ar[rr, "f_1"] \ar[dr, "\pi"'] \& \& E'  \ar[dl, "\pi'"]\\
+        \& B
+    }
+}
+
+\Card{$A$-indexed set}{A collection of sets $S_a$, one for each $a\in A$.}
+
+
+\Card{Closed mapping}{For any element $x\in S$, $f(x)\in S$.}
+
+\Card{Magma}{A set with a closed mapping.}
+
+\Card{Associative mapping}{
+    A mapping $f:S\times S$ is associative iff $f(s_1, f(s_2, s_3)) = f(f(s_1, s_2), s_3)$.
+}
+
+\Card{Semigroup}{A set with a closed, associative mapping.
+
+A magma whose operation is also associative.}
+
+\Card{Monoid}{
+    A set with an operation that is closed and associative,
+    and an identity element where $f(x)=x$.
+
+    I.e., a semigroup with an identity.
+}
+
+\Card{Trivial monoid}{
+    A monoid over a set whose sole element is the identity, $(\{id\}, id, \cdot)$.
+
+    Written as $\underline 1$.
+}
+
+\Card{List in a set $X$}{
+    A pair $(n, f)$, where $f:\underline n \to X$. May be denoted as
+    $(n, f) = [f(1), f(2), \dots, f(n)]$.
+}
+
+\Card[notation]{Concatenation of lists, $++$}{
+    Given $L=(n, f)$ and $L'=(n',f')$ a new list $L++L' =(n+n', f++f')$ where $f++f'$
+    matches $f(x)$ for $x\leq n$, then $f'(x-n)$ for $x>n$.
+}
+
+\Card{Free monoid generated by a set $X$}{
+    A triplet $($List$(X), [ ], ++)$, where the first element is the set of all lists ($n,
+    f)$ where $n=|X|$.
+}
+
+\Card{Presented monoid}{
+    Let $\sim$ indicate the equivalence relation on List$(G)$ (the set of all lists
+    on $G$) generated by $(x\cdot f(i)\cdot y \sim x\cdot f'(i)\cdot y)$, where $f$
+    and $f'$ are in List$(G)$.
+
+    The monoid presented by the generator $G$ and relations $f(i), f'(i)$ is the set
+    List$(G)\backslash \sim$, the identity $[ ]$, and the operation $++$.
+}
+
+\Card{Cyclic monoid}{
+    A presented monoid based on a generator with a single element.
+}
+
+\Card{Monoid action}{
+    Given a monoid $(M, id, \cdot)$ and a set $S$, the action $\circlearrowleft:M\times M
+    \to S$ satisfies
+    \items{
+        \item $id \circlearrowleft s = s, s\in S$
+        \item $m \circlearrowleft (n \circlearrowleft s) = (m\cdot n) \circlearrowleft s$
+    }
+}
+
+\Card{Finite state machine}{
+    \items{
+    \item A set of symbols, the input alphabet $\Sigma$
+    \item A set of states $S$
+    \item A transition function $\delta: \Sigma \times S\to S$
+    \item An initial state $\in S$
+    \item A set of final states $\subseteq S$
+    }
+}
+
+\Card[Proposition]{How is a finite state machine expressed via monoids?}{
+    Given $\delta: \Sigma \times S \to S$, let the monoid be the free monoid based on
+    List$(\Sigma)$; then the state machine is an action of the free monoid on $S$.
 }
 
 \Card{Group}{
@@ -302,20 +466,8 @@ A set with a binary operation that is
 \item    has an identity, and
 \item    has an inverse
 }
+
+I.e., a monoid where every element has an inverse.
 }
-
-\Card{Closed mapping}{For any element $x\in S$, $f(x)\in S$.}
-
-\Card{Associative mapping}{
-    A mapping $f:S\times S$ is associative iff $f(s_1, f(s_2, s_3)) = f(f(s_1, s_2), s_3)$.
-}
-
-\Card{Magma}{A set with a closed mapping.}
-
-\Card{Semigroup}{A set with a closed, associative mapping.
-
-A magma whose operation is also associative.}
-
-\Card{Hom set of $A$, $B$}{The set of mappings between $A$ and $B$}
 
 \end{document}
