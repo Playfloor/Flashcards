@@ -21,3 +21,4 @@
     \end{itemize}
 }
 
+\def\card#1#2{\Card{#1}{#2}}

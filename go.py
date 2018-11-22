@@ -1,7 +1,7 @@
 #! python
 
 # Set the topics you want to work on here.
-Files=["abstract-algebra", "category-theory", "topology", "representation_theory"]
+Files=["abstract-algebra", "category-theory", "topology"]
 
 import subprocess
 
