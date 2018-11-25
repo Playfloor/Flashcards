@@ -9,10 +9,7 @@
 \end{flashcard}
 }
 
-% Most are definitions, so let's give those their own macro
-\long\def\Dcard#1#2{
-\Card[Definition]{#1}{#2}
-}
+\def\card{\Card}
 
 \def\items#1{
     \begin{itemize}
@@ -20,5 +17,3 @@
     #1
     \end{itemize}
 }
-
-\def\card#1#2{\Card{#1}{#2}}
