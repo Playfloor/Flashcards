@@ -603,4 +603,62 @@ $\leq$ is a preorder iff
 \card{Discrete preorder on $S$}{$$s\leq s' { \rm\ iff\ } s=s'.$$}
 
 \card{Indiscrete preorder on $S$}{$$s\leq s',\  \forall  s, s'\in S.$$}
+
+\card{Category}{
+    \items{
+    \item A collection of objects, $Ob({\cal C})$
+    \item $\forall x, y\in Ob({\cal C})$, the Hom-set $\Hom{\cal C}(x, y)$ listing morphisms $x\to y$
+    \item $\forall x\in Ob({\cal C})$, an identity morphism on $x$, $id_x \in \Hom{\cal C}(x, x)$
+    \item A composition formula that is associative and correctly handles the identitity morphisms,
+ $$\circ: \Hom{\cal C}(y, z) \times \Hom{\cal C}(x, y) \to \Hom{\cal C}(x, z)$$
+    }
+}
+
+\card[Sub-defintion]{Properties of $\circ$ for a category}{
+    \items{
+    \item For any $f:x\to y$, $f\circ id_x = f$ and $id_y \circ f = f$
+    \item Associativity: with $f:w\to x$, $g:x\to y$, $h:y\to z$, $$h\circ(g\circ f) = (h
+\circ g)\circ f$$
+    }
+
+}
+
+\card{The category {\bf Set}}{
+    \items{
+    \item The set of sets $S$
+    \item $\forall$ sets $X, Y\in S$, the set of mappings $f:X\to Y$,
+    \item including the identity morphism $id_x : X\to X$ for any $X\in S$.
+    \item The usual function composition formula
+    }
+}
+
+\card{The category {\bf Fin}}{
+    The category of sets with finite cardinality.
+    \items{
+    \item Objects are finite sets
+    \item Morphisms and composition formula are as with {\bf set}
+    }
+}
+
+\card{The category {\bf Mon}}{
+    \items{
+    \item The set of monoids $(M, id, \cdot)$
+    \item For any two monoids, the set of monoid homomorphisms between them.
+    \item Monoid homomorphisms are defined via functions $f:M\to M'$ and $g:M'\to M''$;
+        composing the functions to $g\circ f$ generates a morphism composition.
+    }
+}
+
+\card{The category {\bf Grp}}{
+    \items{
+    \item The set of groups $(M, id, \cdot)$ (i.e., monoids where $\cdot$ is invertible)
+    \item Morphisms and composition are defined as with {\bf Mon}
+    }
+}
+
+\card{The category {\bf PrO}}{
+    The set of preorders $(S, \leq)$, with the usual morphisms on preorders of the form
+$f:S\to S'$. Composition of functions induces composition of $\Hom(Preorders)$
+}
+
 \end{document}
