@@ -5,7 +5,7 @@
 \cardfrontfoot{Category Theory}
 
 %\usepackage{amsfonts}
-\usepackage{amssymb,amsmath,tikz-cd}
+\usepackage{amssymb,amsmath,tikz-cd,xspace}
 \usepackage[T1]{fontenc}
 
 \begin{document}
@@ -95,7 +95,7 @@ isomorphic to $C$.
 
 \Card{Product of two sets}{
     The set of ordered pairs. For sets $X$ and $Y$,
-    $${(x,y)|x\in X, y\in Y}.$$
+    $$\{(x,y)|x\in X, y\in Y\}.$$
 }
 
 \Card{Projection function $\pi_i$}{
@@ -253,7 +253,7 @@ $Eq(f, g)\equiv {x\in X|f(x)=f(y)}$.
 
 \Card{Fiber sum}{
     A {\em pushout}: given $f:Z\to X$ and  $g:Z\to Y$, the fiber sum $X\sqcup_Z Y\equiv (X\sqcup Z \sqcup
-Y)\backslash ~$ where $z\sim f(z)$ and $z\sim g(z)$. So,
+Y)\backslash \sim$ where $z\sim f(z)$ and $z\sim g(z)$. So,
 
     \Comdiag{
         Z \ar[d, "f"'] \ar[r, "g"] \& Y \ar[d, "i_2"] \\
@@ -274,6 +274,7 @@ Y)\backslash ~$ where $z\sim f(z)$ and $z\sim g(z)$. So,
 
 \Card{Power set}{For a given set $S$, the set of subsets of $S$. Here notated ${\mathbb P}(S)$}
 
+\card{Notation}{$\Omega$}{The set $\{$True, False $\}$}
 
 \Card[Proposition]{For an arbitrary set $S$, how do $\Omega$ and ${\mathbb P}(S)$ relate?}{
 $\exists$ an isomporphism $f:$\Comdiag{ \Hom{Set}(S,\Omega) \arrow[r,"\cong"] \& {\mathbb P}(S) }
@@ -292,7 +293,7 @@ marking an element true iff it is in $S'$.}
     $f$ is injective iff it is epic.
 }
 
-\Card{Monorphism}{
+\Card{Monomorphism}{
     $F$ is {\em monic} or {\em mono} iff $f g_1 = f g_2 \Rightarrow g_1 = g_2$.
 
     \Comdiag{
@@ -659,6 +660,19 @@ $\leq$ is a preorder iff
 \card{The category {\bf PrO}}{
     The set of preorders $(S, \leq)$, with the usual morphisms on preorders of the form
 $f:S\to S'$. Composition of functions induces composition of $\Hom(Preorders)$
+}
+
+\card{Isomorphism between objects in a category}{
+    A morphism $f:X\to Y$, $X,Y\in Ob({\cal C})$, such that $\exists G:Y\to X$ such that
+    $g\circ f = id_x$ and $f\circ g = id_y$.
+}
+
+\card{Endomorphism}{A mapping from an object to itself.}
+
+\card{Automorphism}{
+    An isomorphic mapping from an object to itself.
+
+    An endomorphism that is also an isomorphism.
 }
 
 \end{document}

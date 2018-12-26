@@ -1,3 +1,5 @@
+This fork by b-k was primarily about improving the category theory flash cards, but I've moved those to https://github.com/b-k/cat_notes . Please do any further downloading or hacking there.
+
 # flashcards
 Flash cards for various Math and Physics courses typeset with LaTeX. Most of the Math flash card sets are relatively complete, but the Physics sets are very incomplete. Documentation for how to use the FlashCards class can be found at:
 
